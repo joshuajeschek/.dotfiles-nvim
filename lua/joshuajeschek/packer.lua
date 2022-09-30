@@ -8,10 +8,6 @@ return require('packer').startup(function()
     require('mini.comment').setup()
     require('mini.surround').setup()
   end })
-  use('filipdutescu/renamer.nvim', {
-    branch = 'master',
-    requires = {{'nvim-lua/plenary.nvim'}}
-  })
 
   -- LSP and CMP
   use('sbdchd/neoformat')
