@@ -1,8 +1,6 @@
 local Remap = require('joshuajeschek.keymap')
 local nnoremap = Remap.nnoremap
 local tnoremap = Remap.tnoremap
-local inoremap = Remap.inoremap
-local vnoremap = Remap.vnoremap
 
 require('lspsaga').init_lsp_saga({
     border_style = 'rounded',
@@ -51,6 +49,8 @@ nnoremap('<leader>o', '<cmd>LSoutlineToggle<CR>', { silent = true })
 nnoremap('<leader><leader>', '<cmd>Lspsaga hover_doc<CR>', { silent = true })
 -- floatterm
 nnoremap('<C-ö>', '<cmd>Lspsaga open_floaterm<CR>', { silent = true } )
+nnoremap('<C-ä>', '<cmd>Lspsaga open_floaterm lazygit<CR>', { silent = true } )
+nnoremap('<C-ä>', [[<C-\><C-n><cmd>Lspsaga close_floaterm<CR>]], { silent = true } )
 tnoremap('<C-ö>', [[<C-\><C-n><cmd>Lspsaga close_floaterm<CR>]], { silent = true })
 
 

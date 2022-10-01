@@ -1,5 +1,6 @@
 return require('packer').startup(function()
   use('wbthomason/packer.nvim')
+  use('glepnir/dashboard-nvim')
   use('wakatime/vim-wakatime')
   use('jiangmiao/auto-pairs')
   use('tpope/vim-fugitive')

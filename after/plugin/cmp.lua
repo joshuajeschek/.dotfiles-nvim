@@ -6,6 +6,10 @@ local has_words_before = function()
   return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match('%s') == nil
 end
 
+-- local lspkind_symbol_map = lspkind.
+
+lspkind.symbol_map['Tabnine'] = 'ﮧ'
+
 -- general autocompletion setup
 cmp.setup ({
   snippet = {
@@ -41,9 +45,17 @@ cmp.setup ({
   },
   formatting = {
     format = lspkind.cmp_format({
+      -- symbol_map = lspkind_symbol_map,
       mode = 'symbol', -- show only symbol annotations
       maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
       ellipsis_char = '...', -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
+      before = function(entry, vim_item)
+        if entry.source.name == 'cmp_tabnine' then
+          -- vim_item.abbr = vim_item.kind
+          vim_item.kind = 'Tabnine'
+        end
+        return vim_item
+      end
     }),
   },
   window = {
