@@ -1,7 +1,7 @@
 local db = require('dashboard')
 local home = os.getenv('HOME')
 
-local cmd = io.popen('dotbare ls-tree -r main --name-only | tr "\n" ","')
+local cmd = io.popen('dotbare ls-tree -r main --name-only         tr "\n" ","')
 local dotfiles = ' '
 if cmd ~= nil then
   dotfiles = cmd:read('*a'):gsub('%,\n', '')
@@ -24,39 +24,39 @@ db.custom_header = {
 db.custom_center = {
   {
     icon = '  ',
-    desc = 'Find Files           ',
+    desc = 'Find Files         ',
     action = 'Telescope find_files',
-    shortcut = '|'
+    shortcut = 'SPC F F'
   },
   {
     icon = '  ',
-    desc = 'Find Word            ',
+    desc = 'Live Grep          ',
     action = 'Telescope live_grep',
-    shortcut = '|'
+    shortcut = 'SPC L G'
   },
   {
-    icon = '痢 ',
-    desc = 'Recently Opened Files',
+    icon = 'ﮮ  ' ,
+    desc = 'Oldfiles           ',
     action = 'Telescope oldfiles',
-    shortcut = '|'
+    shortcut = 'SPC O F'
   },
   {
     icon = '痢 ',
-    desc = 'Update Plugins       ',
+    desc = 'Update Plugins     ',
     action = 'PackerSync',
-    shortcut = '|'
+    shortcut = '       '
   },
   {
     icon = '  ',
-    desc = 'Edit Nvim Config     ',
+    desc = 'Edit Nvim Config   ',
     action = 'Telescope find_files cwd=' .. home .. '/.config/nvim hidden=true',
-    shortcut = '|'
+    shortcut = '       '
   },
   {
     icon = '  ',
-    desc = 'Edit Dotfiles        ',
+    desc = 'Edit Dotfiles      ',
     action = dotfiles_action,
-    shortcut = '|'
+    shortcut = '       '
   },
 }
 db.hide_statusline = false

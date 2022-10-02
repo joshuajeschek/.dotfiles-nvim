@@ -45,7 +45,7 @@ nnoremap('<leader>ca', '<cmd>Lspsaga code_action<CR>', { silent = true })
 nnoremap('<leader>rn', '<cmd>Lspsaga rename<CR>', { silent = true })
 nnoremap('<leader>?', '<cmd>Lspsaga show_line_diagnostics<CR>', { silent = true })
 nnoremap('<leader>?', '<cmd>Lspsaga show_cursor_diagnostics<CR>', { silent = true })
-nnoremap('<leader>o', '<cmd>LSoutlineToggle<CR>', { silent = true })
+nnoremap('<leader>ol', '<cmd>LSoutlineToggle<CR>', { silent = true })
 nnoremap('<leader><leader>', '<cmd>Lspsaga hover_doc<CR>', { silent = true })
 -- floatterm
 nnoremap('<C-ö>', '<cmd>Lspsaga open_floaterm<CR>', { silent = true } )
