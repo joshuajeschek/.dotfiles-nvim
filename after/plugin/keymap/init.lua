@@ -14,6 +14,7 @@ nnoremap('<leader>t', ':Telescope<CR>')
 nnoremap('<leader>fb', ':Telescope file_browser<CR>')
 nnoremap('<leader>ff', ':Telescope find_files<CR>')
 nnoremap('<leader>of', ':Telescope oldfiles<CR>')
+nnoremap('<leader>lg', ':Telescope live_grep<CR>')
 
 -- commenting
 inoremap('<C-#>', '<C-o>:lua MiniComment.operator("line")<CR>')

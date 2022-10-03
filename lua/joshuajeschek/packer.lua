@@ -1,14 +1,11 @@
 return require('packer').startup(function()
   use('wbthomason/packer.nvim')
-  use('glepnir/dashboard-nvim')
+  -- use('glepnir/dashboard-nvim')
   use('wakatime/vim-wakatime')
   use('jiangmiao/auto-pairs')
   use('tpope/vim-fugitive')
-  use('echasnovski/mini.nvim', { config = function()
-    require('mini.trailspace').setup()
-    require('mini.comment').setup()
-    require('mini.surround').setup()
-  end })
+  use('notjedi/nvim-rooter.lua')
+  use('echasnovski/mini.nvim')
 
   -- LSP and CMP
   use('sbdchd/neoformat')
@@ -39,6 +36,7 @@ return require('packer').startup(function()
   })
   use('kyazdani42/nvim-web-devicons')
   use('nvim-telescope/telescope-file-browser.nvim')
+  use('olacin/telescope-cc.nvim')
 
   -- git
   use('zivyangll/git-blame.vim')
