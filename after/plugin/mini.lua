@@ -66,20 +66,25 @@ starter.setup({
   query_updaters = 'abcdefghijklmnopqrstuvwxyz0123456789',
   footer = '\n░ Time spent coding today: ...'
 })
-
 local timer = vim.loop.new_timer()
 timer:start(0, 1000, vim.schedule_wrap(function()
+  if vim.api.nvim_buf_get_option(0, 'filetype') ~= 'starter' then
+    timer:stop()
+    return
+  end
   local wakatime = io.popen('~/.wakatime/wakatime-cli --today'):read('*a')
-  local dotfiles = io.popen('dotbare ls-tree -r main --name-only | tr "\n" ","')
-    :read('*a'):gsub('%,\n', '')
-  -- spaces are not allowed (should not occur, at least not in my config)
-  -- also, if spaces occur it could mean that host system is not using dotbare
-  if not string.find(dotfiles, ' ') then
+  local dotbare = io.popen("hash dotbare 2>&1 || echo ::ERROR::", "r")
+  if dotbare and not dotbare:read('*a'):find('::ERROR::') then
+    local dotfiles = io.popen('dotbare ls-tree -r main --name-only | tr "\n" ","')
+      :read('*a'):gsub('%,\n', '')
+    -- spaces are not allowed (should not occur, at least not in my config)
+    -- also, if spaces occur it could mean that host system is not using dotbare
     MiniStarter.config.items[#MiniStarter.config.items] = {
       name = 'Dotfiles',
       action = 'Telescope find_files hidden=true search_dirs=' .. dotfiles,
       section = '---'
     }
+
   end
   MiniStarter.config.footer = '\n░ Time spent coding today: ' .. wakatime
   MiniStarter.refresh()
