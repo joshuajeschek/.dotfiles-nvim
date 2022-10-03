@@ -66,12 +66,8 @@ starter.setup({
   query_updaters = 'abcdefghijklmnopqrstuvwxyz0123456789',
   footer = '\n░ Time spent coding today: ...'
 })
-local timer = vim.loop.new_timer()
-timer:start(0, 1000, vim.schedule_wrap(function()
-  if vim.api.nvim_buf_get_option(0, 'filetype') ~= 'starter' then
-    timer:stop()
-    return
-  end
+
+vim.defer_fn(function()
   local wakatime = io.popen('~/.wakatime/wakatime-cli --today'):read('*a')
   local dotbare = io.popen("hash dotbare 2>&1 || echo ::ERROR::", "r")
   if dotbare and not dotbare:read('*a'):find('::ERROR::') then
@@ -85,8 +81,10 @@ timer:start(0, 1000, vim.schedule_wrap(function()
       section = '---'
     }
 
+    MiniStarter.config.footer = '\n░ Time spent coding today: ' .. wakatime
   end
-  MiniStarter.config.footer = '\n░ Time spent coding today: ' .. wakatime
-  MiniStarter.refresh()
-  timer:stop()
-end))
+  if vim.api.nvim_buf_get_option(0, 'filetype') == 'starter' then
+    MiniStarter.refresh()
+  end
+end, 1000)
+
