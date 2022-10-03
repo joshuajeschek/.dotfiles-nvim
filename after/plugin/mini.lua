@@ -72,7 +72,8 @@ timer:start(0, 1000, vim.schedule_wrap(function()
   local wakatime = io.popen('~/.wakatime/wakatime-cli --today'):read('*a')
   local dotfiles = io.popen('dotbare ls-tree -r main --name-only | tr "\n" ","')
     :read('*a'):gsub('%,\n', '')
-  print(dotfiles)
+  -- spaces are not allowed (should not occur, at least not in my config)
+  -- also, if spaces occur it could mean that host system is not using dotbare
   if not string.find(dotfiles, ' ') then
     MiniStarter.config.items[#MiniStarter.config.items] = {
       name = 'Dotfiles',
