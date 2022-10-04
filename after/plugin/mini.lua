@@ -74,6 +74,7 @@ starter.setup({
 
 vim.defer_fn(function()
   local wakatime = io.popen('~/.wakatime/wakatime-cli --today'):read('*a')
+  MiniStarter.config.footer = '\n░ Time spent coding today: ' .. wakatime
   local dotbare = io.popen("hash dotbare 2>&1 || echo ::ERROR::", "r")
   if dotbare and not dotbare:read('*a'):find('::ERROR::') then
     local dotfiles = io.popen('dotbare ls-tree -r main --name-only | tr "\n" ","')
@@ -85,8 +86,6 @@ vim.defer_fn(function()
       action = 'Telescope find_files hidden=true search_dirs=' .. dotfiles,
       section = '---'
     }
-
-    MiniStarter.config.footer = '\n░ Time spent coding today: ' .. wakatime
   end
   if vim.api.nvim_buf_get_option(0, 'filetype') == 'starter' then
     MiniStarter.refresh()
