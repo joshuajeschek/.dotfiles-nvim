@@ -39,6 +39,11 @@ table.insert(starter_items, {
   section = '---'
 })
 table.insert(starter_items, {
+  name = 'Mason',
+  action = 'Mason',
+  section = '---'
+})
+table.insert(starter_items, {
   name = 'Configure Nvim',
   action = 'Telescope find_files hidden=true cwd=' .. home .. '/.config/nvim',
   section = '---'

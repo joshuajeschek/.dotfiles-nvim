@@ -1,15 +1,14 @@
 return require('packer').startup(function()
   use('wbthomason/packer.nvim')
-  -- use('glepnir/dashboard-nvim')
   use('wakatime/vim-wakatime')
   use('jiangmiao/auto-pairs')
-  use('tpope/vim-fugitive')
   use('notjedi/nvim-rooter.lua')
   use('echasnovski/mini.nvim')
 
   -- LSP and CMP
   use('sbdchd/neoformat')
   use('neovim/nvim-lspconfig')
+  use('williamboman/mason.nvim')
   use('hrsh7th/cmp-nvim-lsp')
   use('hrsh7th/cmp-buffer')
   use('hrsh7th/cmp-path')
@@ -21,11 +20,6 @@ return require('packer').startup(function()
   use('saadparwaiz1/cmp_luasnip')
   use('tzachar/cmp-tabnine', { run = './install.sh', requires = 'hrsh7th/nvim-cmp' })
   use('glepnir/lspsaga.nvim', { branch = 'master' })
-  use('ray-x/navigator.lua', {
-    requires = {
-      { 'ray-x/guihua.lua', run = 'cd lua/fzy && make' },
-      { 'neovim/nvim-lspconfig' },
-    }})
 
   -- telescope
   use('nvim-telescope/telescope.nvim')
@@ -39,13 +33,14 @@ return require('packer').startup(function()
   use('olacin/telescope-cc.nvim')
 
   -- git
+  use('tpope/vim-fugitive')
   use('zivyangll/git-blame.vim')
   use('airblade/vim-gitgutter')
-
 
   -- UI
   use('gruvbox-community/gruvbox')
   use('lukas-reineke/virt-column.nvim')
   use('vim-airline/vim-airline')
+  -- use('glepnir/dashboard-nvim')
 end)
 

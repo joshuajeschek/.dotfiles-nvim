@@ -3,6 +3,7 @@
     "Lua.diagnostics.globals": [
         "vim",
         "use",
-        "MiniStarter"
+        "MiniStarter",
+        "MinitStarter"
     ]
 }

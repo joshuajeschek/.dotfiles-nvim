@@ -7,7 +7,11 @@ local vnoremap = Remap.vnoremap
 -- lsp keybinds -> lsp.lua
 -- cmp keybinds -> cmp.lua
 
-nnoremap('<leader>db', ':Dashboard<CR>')
+-- nnoremap('<leader>db', ':Dashboard<CR>')
+nnoremap('<leader>db', function ()
+    MiniStarter.open()
+    MiniStarter.refresh()
+end)
 
 -- telescope
 nnoremap('<leader>t', ':Telescope<CR>')
