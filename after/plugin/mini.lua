@@ -68,7 +68,7 @@ starter.setup({
   end
   ,
   items = starter_items,
-  query_updaters = 'abcdefghijklmnopqrstuvwxyz0123456789',
+  query_updaters = 'abcdefghijklmnopqrstuvwxyz0123456789.-_',
   footer = '\n░ Time spent coding today: ...'
 })
 
