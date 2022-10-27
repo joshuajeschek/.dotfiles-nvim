@@ -2,12 +2,12 @@ local Remap = require("joshuajeschek.keymap")
 
 local nnoremap = Remap.nnoremap
 local inoremap = Remap.inoremap
-local vnoremap = Remap.vnoremap
+-- local vnoremap = Remap.vnoremap
 
 -- lsp keybinds -> lsp.lua
 -- cmp keybinds -> cmp.lua
+-- formatter keybinds -> formatter.lua
 
--- nnoremap('<leader>db', ':Dashboard<CR>')
 nnoremap('<leader>db', function ()
     MiniStarter.open()
     MiniStarter.refresh()
@@ -28,8 +28,3 @@ nnoremap('<C-z>', 'u')
 nnoremap('<C-S-z>', 'C-r')
 inoremap('<C-z>', '<C-o>u')
 inoremap('<C-S-z>', '<C-o><C-r>')
-
--- Neoformat
-nnoremap('<C-S-G>', ':Neoformat<CR>')
-inoremap('<C-S-G>', '<C-o>:Neoformat<CR>')
-

@@ -6,7 +6,7 @@ return require('packer').startup(function()
   use('echasnovski/mini.nvim')
 
   -- LSP and CMP
-  use('sbdchd/neoformat')
+  use('mhartington/formatter.nvim')
   use('neovim/nvim-lspconfig')
   use('williamboman/mason.nvim')
   use('hrsh7th/cmp-nvim-lsp')
