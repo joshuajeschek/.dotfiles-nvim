@@ -9,6 +9,7 @@ require('lspsaga').init_lsp_saga({
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 require'lspconfig'.jedi_language_server.setup{ capabilities = capabilities }
+require'lspconfig'.hls.setup{ capabilities = capabilities }
 
 require'lspconfig'.sumneko_lua.setup {
   capabilities = capabilities,
@@ -37,15 +38,16 @@ require'lspconfig'.html.setup {
 }
 
 require'lspconfig'.emmet_ls.setup{
-  capabilites = capabilities
+  capabilites = capabilities,
+  filetypes = { 'html', 'typescriptreact', 'javascriptreact', 'css', 'sass', 'scss', 'less', 'htmldjango' },
 }
 
 -- key bindings
 nnoremap('<C-CR>', '<cmd>Lspsaga lsp_finder<CR>', { silent = true })
 nnoremap('<leader>ca', '<cmd>Lspsaga code_action<CR>', { silent = true })
 nnoremap('<leader>rn', '<cmd>Lspsaga rename<CR>', { silent = true })
-nnoremap('<leader>?', '<cmd>Lspsaga show_line_diagnostics<CR>', { silent = true })
-nnoremap('<leader>?', '<cmd>Lspsaga show_cursor_diagnostics<CR>', { silent = true })
+nnoremap('<leader>dn', '<cmd>Lspsaga diagnostic_jump_next<CR>', { silent = true })
+nnoremap('<leader>dp', '<cmd>Lspsaga diagnostic_jump_prev<CR>', { silent = true })
 nnoremap('<leader>ol', '<cmd>LSoutlineToggle<CR>', { silent = true })
 nnoremap('<leader><leader>', '<cmd>Lspsaga hover_doc<CR>', { silent = true })
 -- floatterm
