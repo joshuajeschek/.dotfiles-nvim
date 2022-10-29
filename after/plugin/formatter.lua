@@ -58,6 +58,9 @@ require('formatter').setup {
         }
       end
     },
+    haskell = {
+      require('formatter.filetypes.haskell').stylish_haskell,
+    },
     ["*"] = {
       require('formatter.filetypes.any').remove_trailing_whitespace,
     },

@@ -4,6 +4,8 @@ return require('packer').startup(function()
   use('jiangmiao/auto-pairs')
   use('notjedi/nvim-rooter.lua')
   use('echasnovski/mini.nvim')
+  use('tamton-aquib/duck.nvim')
+  use('seandewar/killersheep.nvim')
 
   -- LSP and CMP
   use('mhartington/formatter.nvim')
@@ -20,6 +22,8 @@ return require('packer').startup(function()
   use('saadparwaiz1/cmp_luasnip')
   use('tzachar/cmp-tabnine', { run = './install.sh', requires = 'hrsh7th/nvim-cmp' })
   use('glepnir/lspsaga.nvim', { branch = 'master' })
+  -- language specific
+  use('neovimhaskell/haskell-vim')
 
   -- telescope
   use('nvim-telescope/telescope.nvim')
