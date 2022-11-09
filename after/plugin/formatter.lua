@@ -7,8 +7,8 @@ local nnoremap = Remap.nnoremap
 local inoremap = Remap.inoremap
 
 local TMPDIR = vim.fn.stdpath('data') .. '/formatter'
-print(TMPDIR)
-os.execute('mkdir -p' .. TMPDIR)
+
+if not file_exists(TMPDIR) then os.execute('mkdir -p' .. TMPDIR) end
 require('formatter').setup {
   logging = true,
   log_level = vim.log.levels.WARN,
@@ -17,11 +17,12 @@ require('formatter').setup {
       -- require('formatter.filetypes.lua').luaformatter,
       function()
         return {
-          exe = 'luaformatter',
+          exe = 'lua-format',
           args = {
-            util.escape_path(util.get_current_buffer_file_path()),
+            '--tab-width=2', '--indent-width=2',
+            util.escape_path(util.get_current_buffer_file_path())
           },
-          stdin = true,
+          stdin = true
         }
       end
     },
@@ -32,7 +33,7 @@ require('formatter').setup {
         local tmpfile = TMPDIR .. '/' .. os.time()
         local f = io.open(tmpfile, 'w')
         if f == nil then
-          return { exe = 'echo "Failed to create temp file"; (exit 1)' }
+          return {exe = 'echo "Failed to create temp file"; (exit 1)'}
         end
         f:write(content)
         f:close()
@@ -40,12 +41,8 @@ require('formatter').setup {
         return {
           exe = 'djlint',
           args = {
-            tmpfile,
-            '--reformat',
-            '--format-css',
-            '--format-js',
-            '--indent 2',
-            '--preserve-blank-lines',
+            tmpfile, '--reformat', '--format-css', '--format-js', '--indent 2',
+            '--preserve-blank-lines'
           },
           ignore_exitcode = true,
           no_append = true,
@@ -59,13 +56,9 @@ require('formatter').setup {
         }
       end
     },
-    haskell = {
-      require('formatter.filetypes.haskell').stylish_haskell,
-    },
-    ["*"] = {
-      require('formatter.filetypes.any').remove_trailing_whitespace,
-    },
-  },
+    haskell = {require('formatter.filetypes.haskell').stylish_haskell},
+    ["*"] = {require('formatter.filetypes.any').remove_trailing_whitespace}
+  }
 }
 
 nnoremap('<C-F>', ':w | :Format<CR>')
