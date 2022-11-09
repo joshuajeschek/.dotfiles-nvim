@@ -7,6 +7,7 @@ local nnoremap = Remap.nnoremap
 local inoremap = Remap.inoremap
 
 local TMPDIR = vim.fn.stdpath('data') .. '/formatter'
+print(TMPDIR)
 os.execute('mkdir -p' .. TMPDIR)
 require('formatter').setup {
   logging = true,
