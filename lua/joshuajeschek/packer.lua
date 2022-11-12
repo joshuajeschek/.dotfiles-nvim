@@ -24,6 +24,8 @@ return require('packer').startup(function()
   use('glepnir/lspsaga.nvim', { branch = 'master' })
   -- language specific
   use('neovimhaskell/haskell-vim')
+  use('aklt/plantuml-syntax')
+
 
   -- telescope
   use('nvim-telescope/telescope.nvim')
