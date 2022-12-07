@@ -57,6 +57,7 @@ require('formatter').setup {
       end
     },
     haskell = {require('formatter.filetypes.haskell').stylish_haskell},
+    latex = {require('formatter.filetypes.latex').latexindent},
     ["*"] = {require('formatter.filetypes.any').remove_trailing_whitespace}
   }
 }
