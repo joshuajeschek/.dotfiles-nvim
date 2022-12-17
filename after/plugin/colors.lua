@@ -1,6 +1,6 @@
 -- luacheck: globals vim
 
-vim.g.joshuajeschek_colorscheme = "gruvbox"
+vim.g.joshuajeschek_colorscheme = "wal"
 
 vim.g.gruvbox_contrast_dark = 'hard'
 vim.opt.background = "dark"

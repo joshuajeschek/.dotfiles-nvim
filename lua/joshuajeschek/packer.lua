@@ -6,6 +6,7 @@ return require('packer').startup(function()
   use('echasnovski/mini.nvim')
   use('tamton-aquib/duck.nvim')
   use('seandewar/killersheep.nvim')
+  use('lambdalisue/suda.vim')
 
   -- LSP and CMP
   use('mhartington/formatter.nvim')
@@ -25,6 +26,7 @@ return require('packer').startup(function()
   -- language specific
   use('neovimhaskell/haskell-vim')
   use('aklt/plantuml-syntax')
+  use('elkowar/yuck.vim')
 
 
   -- telescope
@@ -45,6 +47,7 @@ return require('packer').startup(function()
 
   -- UI
   use('gruvbox-community/gruvbox')
+  use('dylanaraps/wal.vim')
   use('lukas-reineke/virt-column.nvim')
   use('vim-airline/vim-airline')
   -- use('glepnir/dashboard-nvim')

@@ -39,9 +39,10 @@ require'lspconfig'.html.setup {
 }
 
 require'lspconfig'.emmet_ls.setup{
-  capabilites = capabilities,
+  capabilities = capabilities,
   filetypes = { 'html', 'typescriptreact', 'javascriptreact', 'css', 'sass', 'scss', 'less', 'htmldjango' },
 }
+require'lspconfig'.tsserver.setup{ capabilities = capabilities }
 
 -- key bindings
 nnoremap('<C-CR>', '<cmd>Lspsaga lsp_finder<CR>', { silent = true })
