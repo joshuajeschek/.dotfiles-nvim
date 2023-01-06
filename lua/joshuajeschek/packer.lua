@@ -36,7 +36,6 @@ return require('packer').startup(function()
   use('nvim-telescope/telescope-fzf-native.nvim', {
     run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
   })
-  use('kyazdani42/nvim-web-devicons')
   use('nvim-telescope/telescope-file-browser.nvim')
   use('olacin/telescope-cc.nvim')
 
@@ -47,9 +46,12 @@ return require('packer').startup(function()
 
   -- UI
   use('gruvbox-community/gruvbox')
+  use('kyazdani42/nvim-web-devicons')
   use('dylanaraps/wal.vim')
   use('lukas-reineke/virt-column.nvim')
   use('vim-airline/vim-airline')
+  use('fgheng/winbar.nvim')
+  use('SmiteshP/nvim-gps')
   -- use('glepnir/dashboard-nvim')
 end)
 
