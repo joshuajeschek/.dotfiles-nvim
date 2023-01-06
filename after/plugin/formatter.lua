@@ -11,8 +11,24 @@ local TMPDIR = vim.fn.stdpath('data') .. '/formatter'
 if not file_exists(TMPDIR) then os.execute('mkdir -p' .. TMPDIR) end
 require('formatter').setup {
   logging = true,
-  log_level = vim.log.levels.WARN,
+  log_level = vim.log.levels.INFO,
   filetype = {
+    python = {require('formatter.filetypes.python').autopep8},
+    haskell = {require('formatter.filetypes.haskell').stylish_haskell},
+    tex = {
+      function()
+        return {
+          exe = "latexindent",
+          args = {
+            '-g', util.escape_path(util.get_cwd() .. '/latexindent.log'),
+            '-l', util.escape_path(util.get_cwd() .. '/latexindent.yaml'),
+            util.escape_path(util.get_current_buffer_file_path())
+          },
+          stdin = true
+        }
+      end
+    },
+    ["*"] = {require('formatter.filetypes.any').remove_trailing_whitespace},
     lua = {
       -- require('formatter.filetypes.lua').luaformatter,
       function()
@@ -55,10 +71,7 @@ require('formatter').setup {
           end
         }
       end
-    },
-    haskell = {require('formatter.filetypes.haskell').stylish_haskell},
-    latex = {require('formatter.filetypes.latex').latexindent},
-    ["*"] = {require('formatter.filetypes.any').remove_trailing_whitespace}
+    }
   }
 }
 
