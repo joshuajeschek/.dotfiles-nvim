@@ -4,9 +4,7 @@ return require('packer').startup(function()
   use('jiangmiao/auto-pairs')
   use('notjedi/nvim-rooter.lua')
   use('echasnovski/mini.nvim')
-  use('tamton-aquib/duck.nvim')
-  use('seandewar/killersheep.nvim')
-  use('lambdalisue/suda.vim')
+  use('gpanders/editorconfig.nvim')
 
   -- LSP and CMP
   use('mhartington/formatter.nvim')
