@@ -28,11 +28,13 @@ return require('packer').startup(function()
   use('aklt/plantuml-syntax')
   use('elkowar/yuck.vim')
 
+  -- treesitter
+  use('nvim-treesitter/nvim-treesitter')
+  use('mrjones2014/nvim-ts-rainbow')
 
   -- telescope
   use('nvim-telescope/telescope.nvim')
   use('nvim-lua/plenary.nvim')
-  use('nvim-treesitter/nvim-treesitter')
   use('nvim-telescope/telescope-fzf-native.nvim', {
     run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
   })
