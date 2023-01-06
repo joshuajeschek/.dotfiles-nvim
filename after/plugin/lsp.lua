@@ -6,6 +6,13 @@ require('lspsaga').init_lsp_saga({
   border_style = 'rounded',
   code_action_icon = '',
   code_action_lightbulb = {enable_in_insert = false},
+  symbol_in_winbar = {
+    -- separator = '  ',
+    separator = ' ',
+    enable = true,
+    show_file = true,
+    file_formatter = '%',
+  },
 })
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
