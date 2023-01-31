@@ -50,8 +50,11 @@ return require('packer').startup(function()
   use('dylanaraps/wal.vim')
   use('lukas-reineke/virt-column.nvim')
   use('vim-airline/vim-airline')
+  use('rcarriga/nvim-notify')
   -- use('fgheng/winbar.nvim')
   -- use('SmiteshP/nvim-gps')
   -- use('glepnir/dashboard-nvim')
+
+  use('kenn7/vim-arsync')
 end)
 

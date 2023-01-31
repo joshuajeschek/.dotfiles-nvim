@@ -3,7 +3,8 @@ local nnoremap = require('joshuajeschek.keymap').nnoremap
 local rpad = require('joshuajeschek.utils').rpad
 local home = os.getenv('HOME')
 
-local cmd = io.popen('dotbare ls-tree -r main --name-only         tr "\n" ","')
+local cmd = io.popen('cd ' .. home .. ' && dotbare ls-tree -r main --name-only         tr "\n" ","')
+print('cd ' .. home .. ' && dotbare ls-tree -r main --name-only         tr "\n" ","')
 local dotfiles = ' '
 if cmd ~= nil then
   dotfiles = cmd:read('*a'):gsub('%,\n', '')

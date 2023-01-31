@@ -91,5 +91,5 @@ vim.defer_fn(function()
   if vim.api.nvim_buf_get_option(0, 'filetype') == 'starter' then
     MiniStarter.refresh()
   end
-end, 1000)
+end, 0)
 

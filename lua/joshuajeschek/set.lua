@@ -49,3 +49,4 @@ vim.g.netrw_winsize = 25
 -- trailing whitespaces
 -- vim.fn.matchadd('errorMsg', [[\s\+$]])
 
+vim.opt.guifont = 'CaskaydiaCove Nerd Font Mono:h15'

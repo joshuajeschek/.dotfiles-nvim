@@ -1,27 +1,37 @@
+-- luacheck: globals vim
 local Remap = require('joshuajeschek.keymap')
 local nnoremap = Remap.nnoremap
 local tnoremap = Remap.tnoremap
+local lspsaga = require('lspsaga')
+local lspconfig = require('lspconfig')
 
-require('lspsaga').init_lsp_saga({
-  border_style = 'rounded',
-  code_action_icon = '',
-  code_action_lightbulb = {enable_in_insert = false},
+require('joshuajeschek.colors').setup()
+lspsaga.setup({
+  ui = {
+    theme = 'round',
+    border = 'rounded',
+    code_action = '',
+    colors = {
+      normal_bg = '#000000',
+    }
+  },
+  lightbulb = {
+    enable_in_insert = false,
+  },
   symbol_in_winbar = {
-    -- separator = '  ',
-    separator = ' ',
-    enable = true,
-    show_file = true,
-    file_formatter = '%',
+    separator = '  ',
   },
 })
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-require'lspconfig'.jedi_language_server.setup {capabilities = capabilities}
-require'lspconfig'.hls.setup {capabilities = capabilities}
-require'lspconfig'.texlab.setup {capabilities = capabilities}
+lspconfig.jedi_language_server.setup {capabilities = capabilities}
+lspconfig.hls.setup {capabilities = capabilities}
+lspconfig.texlab.setup {capabilities = capabilities}
+lspconfig.ccls.setup{capabilities = capabilities}
+lspconfig.prismals.setup{capabilities = capabilities}
 
-require'lspconfig'.sumneko_lua.setup {
+lspconfig.sumneko_lua.setup {
   capabilities = capabilities,
   -- settings for nvim configs
   settings = {
@@ -34,19 +44,19 @@ require'lspconfig'.sumneko_lua.setup {
   }
 }
 
-require'lspconfig'.html.setup {
+lspconfig.html.setup {
   capabilities = capabilities,
   filetypes = {'html', 'htmldjango'}
 }
 
-require'lspconfig'.emmet_ls.setup {
+lspconfig.emmet_ls.setup {
   capabilities = capabilities,
   filetypes = {
     'html', 'typescriptreact', 'javascriptreact', 'css', 'sass', 'scss', 'less',
     'htmldjango'
   }
 }
-require'lspconfig'.tsserver.setup {capabilities = capabilities}
+lspconfig.tsserver.setup {capabilities = capabilities}
 
 -- key bindings
 nnoremap('<C-CR>', '<cmd>Lspsaga lsp_finder<CR>', {silent = true})
