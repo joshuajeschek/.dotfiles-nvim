@@ -31,7 +31,7 @@ lspconfig.texlab.setup {capabilities = capabilities}
 lspconfig.ccls.setup{capabilities = capabilities}
 lspconfig.prismals.setup{capabilities = capabilities}
 
-lspconfig.sumneko_lua.setup {
+lspconfig.lua_ls.setup {
   capabilities = capabilities,
   -- settings for nvim configs
   settings = {
