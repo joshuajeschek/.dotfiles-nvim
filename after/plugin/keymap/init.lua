@@ -32,3 +32,5 @@ inoremap('<C-l>', 'λ')
 
 -- copilot
 inoremap('<C-Enter>', 'copilot#Accept("<CR>")', { silent = true, expr = true })
+inoremap('<C-n>', 'copilot#Next()', { silent = true, expr = true })
+inoremap('<C-S-n>', 'copilot#Previous()', { silent = true, expr = true })
