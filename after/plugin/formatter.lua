@@ -16,6 +16,7 @@ require('formatter').setup {
     python = {require('formatter.filetypes.python').autopep8},
     haskell = {require('formatter.filetypes.haskell').stylish_haskell},
     c = {require('formatter.filetypes.c').clangformat},
+    json = {require('formatter.filetypes.json').prettier},
     tex = {
       function()
         return {

@@ -46,6 +46,8 @@ vim.g.netrw_browse_split = 4
 vim.g.netrw_altv = 1
 vim.g.netrw_winsize = 25
 
+vim.g.copilot_no_tab_map = true
+
 -- trailing whitespaces
 -- vim.fn.matchadd('errorMsg', [[\s\+$]])
 

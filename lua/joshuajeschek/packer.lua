@@ -6,6 +6,8 @@ return require('packer').startup(function()
   use('echasnovski/mini.nvim')
   use('gpanders/editorconfig.nvim')
 
+  use('github/copilot.vim')
+
   -- LSP and CMP
   use('mhartington/formatter.nvim')
   use('neovim/nvim-lspconfig')
@@ -25,6 +27,7 @@ return require('packer').startup(function()
   use('neovimhaskell/haskell-vim')
   use('aklt/plantuml-syntax')
   use('elkowar/yuck.vim')
+  use('prisma/vim-prisma')
 
   -- treesitter
   use('nvim-treesitter/nvim-treesitter')

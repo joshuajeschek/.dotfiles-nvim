@@ -29,3 +29,6 @@ nnoremap('<C-S-z>', 'C-r')
 inoremap('<C-z>', '<C-o>u')
 inoremap('<C-S-z>', '<C-o><C-r>')
 inoremap('<C-l>', 'λ')
+
+-- copilot
+inoremap('<C-Enter>', 'copilot#Accept("<CR>")', { silent = true, expr = true })
