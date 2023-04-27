@@ -17,6 +17,8 @@ require('formatter').setup {
     haskell = {require('formatter.filetypes.haskell').stylish_haskell},
     c = {require('formatter.filetypes.c').clangformat},
     json = {require('formatter.filetypes.json').prettier},
+    typescript = {require('formatter.filetypes.typescript').prettier},
+    typescriptreact = {require('formatter.filetypes.typescriptreact').prettier},
     tex = {
       function()
         return {

@@ -47,6 +47,15 @@ vim.g.netrw_altv = 1
 vim.g.netrw_winsize = 25
 
 vim.g.copilot_no_tab_map = true
+vim.g.copilot_filetypes = {
+  ["*"] = false,
+  ["python"] = true,
+  ["javascript"] = true,
+  ["typescript"] = true,
+  ["typescriptreact"] = true,
+  ["htmldjango"] = true,
+  ["yaml"] = true,
+}
 
 -- trailing whitespaces
 -- vim.fn.matchadd('errorMsg', [[\s\+$]])

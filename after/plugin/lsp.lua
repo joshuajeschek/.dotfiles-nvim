@@ -30,6 +30,7 @@ lspconfig.hls.setup {capabilities = capabilities}
 lspconfig.texlab.setup {capabilities = capabilities}
 lspconfig.ccls.setup{capabilities = capabilities}
 lspconfig.prismals.setup{capabilities = capabilities}
+lspconfig.jsonls.setup{capabilities = capabilities}
 
 lspconfig.lua_ls.setup {
   capabilities = capabilities,
