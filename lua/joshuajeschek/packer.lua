@@ -41,6 +41,8 @@ return require('packer').startup(function()
   })
   use('nvim-telescope/telescope-file-browser.nvim')
   use('olacin/telescope-cc.nvim')
+  use('sopa0/telescope-makefile')
+  use('akinsho/toggleterm.nvim')
 
   -- git
   use('tpope/vim-fugitive')

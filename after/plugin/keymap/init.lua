@@ -15,6 +15,7 @@ end)
 
 -- telescope
 nnoremap('<leader>t', ':Telescope<CR>')
+nnoremap('<leader>tr', ':Telescope resume<CR>')
 nnoremap('<leader>fb', ':Telescope file_browser<CR>')
 nnoremap('<leader>ff', ':Telescope find_files<CR>')
 nnoremap('<leader>fg', ':Telescope git_files<CR>')
