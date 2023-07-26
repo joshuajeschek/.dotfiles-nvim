@@ -21,15 +21,23 @@ require('formatter').setup {
     typescriptreact = {require('formatter.filetypes.typescriptreact').prettier},
     tex = {
       function()
-        return {
+        local buffer_path = util.escape_path(util.get_current_buffer_file_path())
+        local res = {
           exe = "latexindent",
           args = {
-            '-g', util.escape_path(util.get_cwd() .. '/latexindent.log'), '-l',
-            util.escape_path(util.get_cwd() .. '/latexindent.yaml'),
-            util.escape_path(util.get_current_buffer_file_path())
+            -- '-g', util.escape_path(util.get_cwd() .. '/latexindent.log'), --
+            '-g', '/dev/null', --
+            '-l', util.escape_path(util.get_cwd() .. '/latexindent.yaml'), --
+            '-o', buffer_path,
+            buffer_path
           },
           stdin = true
         }
+        -- for _, arg in pairs(res.args) do
+        --   print(arg)
+        -- end
+        -- print(res.args[4])
+        return res
       end
     },
     ["*"] = {require('formatter.filetypes.any').remove_trailing_whitespace},
@@ -95,6 +103,7 @@ require('formatter').setup {
 local au = vim.api.nvim_create_autocmd
 local group = vim.api.nvim_create_augroup('formatter', {clear = true})
 au('User', {pattern = {'FormatterPost', '*.html'}, group = group, command = 'e'})
+au('User', {pattern = {'FormatterPost', '*.tex'}, group = group, command = 'e'})
 
 nnoremap('<C-F>', ':w | :Format<CR>')
 inoremap('<C-F>', '<C-o>:w | :Format<CR>')

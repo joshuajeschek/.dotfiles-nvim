@@ -29,9 +29,27 @@ local function find_dotfiles()
   require('telescope.builtin').find_files({ hidden=true, search_dirs=dotfiles })
 end
 
+local function in_git_repo()
+  local handle = io.popen('git rev-parse --is-inside-work-tree 2>/dev/null')
+  if handle == nil then return false end
+  local result = handle:read("*a")
+  handle:close()
+  return result:match('true') ~= nil
+end
+
+
+local function git_find()
+  print('running git find')
+  if in_git_repo() then
+    return require('telescope.builtin').git_files()
+  end
+  return require('telescope.builtin').find_files()
+end
+
 return {
   rpad = rpad,
   file_exists = file_exists,
   lines_from = lines_from,
-  find_dotfiles = find_dotfiles
+  find_dotfiles = find_dotfiles,
+  git_find = git_find,
 }

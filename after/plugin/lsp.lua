@@ -10,7 +10,7 @@ lspsaga.setup({
   ui = {
     theme = 'round',
     border = 'rounded',
-    code_action = '',
+    code_action = '',
     colors = {
       normal_bg = '#000000',
     }
@@ -19,7 +19,7 @@ lspsaga.setup({
     enable_in_insert = false,
   },
   symbol_in_winbar = {
-    separator = '  ',
+    separator = '  ',
   },
 })
 
@@ -32,6 +32,7 @@ lspconfig.ccls.setup{capabilities = capabilities}
 lspconfig.prismals.setup{capabilities = capabilities}
 lspconfig.jsonls.setup{capabilities = capabilities}
 lspconfig.pyright.setup{capabilities = capabilities}
+lspconfig.csharp_ls.setup{capabilities = capabilities}
 
 lspconfig.lua_ls.setup {
   capabilities = capabilities,

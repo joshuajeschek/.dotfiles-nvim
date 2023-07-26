@@ -1,4 +1,4 @@
-local utils = require'joshuajeschek.utils'
+local Utils = require'joshuajeschek.utils'
 require'mini.trailspace'.setup()
 require'mini.comment'.setup()
 require'mini.surround'.setup()
@@ -14,7 +14,7 @@ local user_host = os.getenv('USER')
 local starter_items = {
   {
     name = 'Find Files',
-    action = 'Telescope find_files',
+    action = Utils.git_find,
     section = '',
   },
   {

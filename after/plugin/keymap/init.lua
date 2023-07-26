@@ -1,4 +1,5 @@
-local Remap = require("joshuajeschek.keymap")
+local Remap = require('joshuajeschek.keymap')
+local Utils = require('joshuajeschek.utils')
 
 local nnoremap = Remap.nnoremap
 local inoremap = Remap.inoremap
@@ -17,7 +18,7 @@ end)
 nnoremap('<leader>t', ':Telescope<CR>')
 nnoremap('<leader>tr', ':Telescope resume<CR>')
 nnoremap('<leader>fb', ':Telescope file_browser<CR>')
-nnoremap('<leader>ff', ':Telescope find_files<CR>')
+nnoremap('<leader>ff', Utils.git_find)
 nnoremap('<leader>fg', ':Telescope git_files<CR>')
 nnoremap('<leader>of', ':Telescope oldfiles<CR>')
 nnoremap('<leader>lg', ':Telescope live_grep<CR>')

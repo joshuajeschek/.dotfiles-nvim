@@ -1,6 +1,6 @@
 local db = require('dashboard')
 local nnoremap = require('joshuajeschek.keymap').nnoremap
-local rpad = require('joshuajeschek.utils').rpad
+local Utils = require('joshuajeschek.utils')
 local home = os.getenv('HOME')
 
 local cmd = io.popen('cd ' .. home .. ' && dotbare ls-tree -r main --name-only         tr "\n" ","')
@@ -33,7 +33,7 @@ db.custom_center = {
   {
     icon = '  ',
     desc = 'Find Files',
-    action = 'Telescope find_files',
+    action = Utils.git_find,
     shortcut = 'SPC F F'
   },
   {
@@ -90,6 +90,6 @@ for _, c in pairs(db.custom_center) do
   end
 end
 for _, c in pairs(db.custom_center) do
-  c.desc = rpad(c.desc, max_desc_len + 1)
+  c.desc = Utils.rpad(c.desc, max_desc_len + 1)
 end
 
