@@ -36,8 +36,8 @@ for _, dir in pairs(require('joshuajeschek.dirs').get_dirs()) do
 end
 
 table.insert(starter_items, {
-  name = 'Update Plugins',
-  action = 'PackerSync',
+  name = 'Lazy',
+  action = 'Lazy',
   section = '---'
 })
 table.insert(starter_items, {
