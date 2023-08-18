@@ -57,6 +57,7 @@ vim.g.copilot_filetypes = {
   ["yaml"] = true,
   ["sh"] = true,
   ["cs"] = true,
+  ["po"] = true,
 }
 
 -- trailing whitespaces
