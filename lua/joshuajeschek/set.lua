@@ -56,6 +56,7 @@ vim.g.copilot_filetypes = {
   ["htmldjango"] = true,
   ["yaml"] = true,
   ["sh"] = true,
+  ["cs"] = true,
 }
 
 -- trailing whitespaces

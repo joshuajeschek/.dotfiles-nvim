@@ -1,4 +1,4 @@
 require("joshuajeschek.set")
-require("joshuajeschek.packer")
+require("joshuajeschek.lazy")
 require("joshuajeschek.airline")
 require("joshuajeschek.autocmd")

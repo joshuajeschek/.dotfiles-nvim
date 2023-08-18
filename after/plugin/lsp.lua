@@ -33,6 +33,7 @@ lspconfig.prismals.setup{capabilities = capabilities}
 lspconfig.jsonls.setup{capabilities = capabilities}
 lspconfig.pyright.setup{capabilities = capabilities}
 lspconfig.csharp_ls.setup{capabilities = capabilities}
+lspconfig.tsserver.setup {capabilities = capabilities}
 
 lspconfig.lua_ls.setup {
   capabilities = capabilities,
@@ -59,7 +60,17 @@ lspconfig.emmet_ls.setup {
     'htmldjango'
   }
 }
-lspconfig.tsserver.setup {capabilities = capabilities}
+
+require('lspconfig').yamlls.setup {
+  capabilities = capabilities,
+  settings = {
+    yaml = {
+      schemas = {
+        ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*",
+      },
+    },
+  }
+}
 
 -- key bindings
 nnoremap('<C-CR>', '<cmd>Lspsaga lsp_finder<CR>', {silent = true})

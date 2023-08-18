@@ -71,19 +71,19 @@ starter.setup({
   ,
   items = starter_items,
   query_updaters = 'abcdefghijklmnopqrstuvwxyz0123456789.-_',
-  footer = '\n░ Time spent coding today: ...'
+  footer = '\n░ ╰(⸝⸝⸝´꒳`⸝⸝⸝)╯'
 })
 
-vim.defer_fn(function()
-  local wakatime = io.popen('~/.wakatime/wakatime-cli --today'):read('*a')
-  MiniStarter.config.footer = '\n░ Time spent coding today: ' .. wakatime
-    MiniStarter.config.items[#MiniStarter.config.items] = {
-      name = 'Dotfiles',
-      action = 'lua require("joshuajeschek.utils").find_dotfiles()',
-      section = '---'
-    }
-  if vim.api.nvim_buf_get_option(0, 'filetype') == 'starter' then
-    MiniStarter.refresh()
-  end
-end, 0)
+-- vim.defer_fn(function()
+--   local wakatime = io.popen('~/.wakatime/wakatime-cli --today'):read('*a')
+--   MiniStarter.config.footer = '\n░ Time spent coding today: ' .. wakatime
+--     MiniStarter.config.items[#MiniStarter.config.items] = {
+--       name = 'Dotfiles',
+--       action = 'lua require("joshuajeschek.utils").find_dotfiles()',
+--       section = '---'
+--     }
+--   if vim.api.nvim_buf_get_option(0, 'filetype') == 'starter' then
+--     MiniStarter.refresh()
+--   end
+-- end, 0)
 

@@ -16,20 +16,31 @@ require('formatter').setup {
     python = {require('formatter.filetypes.python').autopep8},
     haskell = {require('formatter.filetypes.haskell').stylish_haskell},
     c = {require('formatter.filetypes.c').clangformat},
+    -- cs = {require('formatter.filetypes.cs').dotnetformat},
+    cs = {
+      function()
+        return {
+          exe = "dotnet",
+          args = {"format", "whitespace", "-v", "d", "--include"},
+          stdin = false
+        }
+      end
+    },
     json = {require('formatter.filetypes.json').prettier},
     typescript = {require('formatter.filetypes.typescript').prettier},
     typescriptreact = {require('formatter.filetypes.typescriptreact').prettier},
+    yaml = {require('formatter.filetypes.yaml').prettier},
     tex = {
       function()
-        local buffer_path = util.escape_path(util.get_current_buffer_file_path())
+        local buffer_path =
+            util.escape_path(util.get_current_buffer_file_path())
         local res = {
           exe = "latexindent",
           args = {
             -- '-g', util.escape_path(util.get_cwd() .. '/latexindent.log'), --
             '-g', '/dev/null', --
             '-l', util.escape_path(util.get_cwd() .. '/latexindent.yaml'), --
-            '-o', buffer_path,
-            buffer_path
+            '-o', buffer_path, buffer_path
           },
           stdin = true
         }
