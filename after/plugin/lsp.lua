@@ -11,29 +11,24 @@ lspsaga.setup({
     theme = 'round',
     border = 'rounded',
     code_action = '',
-    colors = {
-      normal_bg = '#000000',
-    }
+    colors = {normal_bg = '#000000'}
   },
-  lightbulb = {
-    enable_in_insert = false,
-  },
-  symbol_in_winbar = {
-    separator = '  ',
-  },
+  lightbulb = {enable_in_insert = false},
+  symbol_in_winbar = {separator = '  '}
 })
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-lspconfig.jedi_language_server.setup {capabilities = capabilities}
 lspconfig.hls.setup {capabilities = capabilities}
 lspconfig.texlab.setup {capabilities = capabilities}
-lspconfig.ccls.setup{capabilities = capabilities}
-lspconfig.prismals.setup{capabilities = capabilities}
-lspconfig.jsonls.setup{capabilities = capabilities}
-lspconfig.pyright.setup{capabilities = capabilities}
-lspconfig.csharp_ls.setup{capabilities = capabilities}
+lspconfig.ccls.setup {capabilities = capabilities}
+lspconfig.prismals.setup {capabilities = capabilities}
+lspconfig.jsonls.setup {capabilities = capabilities}
+lspconfig.csharp_ls.setup {capabilities = capabilities}
 lspconfig.tsserver.setup {capabilities = capabilities}
+lspconfig.ruff_lsp.setup {capabilities = capabilities}
+-- lspconfig.pyright.setup {capabilities = capabilities}
+-- lspconfig.jedi_language_server.setup {capabilities = capabilities}
 
 lspconfig.lua_ls.setup {
   capabilities = capabilities,
@@ -66,9 +61,9 @@ require('lspconfig').yamlls.setup {
   settings = {
     yaml = {
       schemas = {
-        ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*",
-      },
-    },
+        ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*"
+      }
+    }
   }
 }
 

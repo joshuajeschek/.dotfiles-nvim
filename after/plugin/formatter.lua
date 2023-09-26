@@ -70,7 +70,7 @@ require('formatter').setup {
         return {
           exe = 'djlint',
           args = {
-            '--quiet', '--reformat', '--format-css', '--format-js',
+            '--quiet', '--reformat', '--format-css',
             '--indent 2', '--preserve-blank-lines',
             util.escape_path(util.get_current_buffer_file_path())
           },
