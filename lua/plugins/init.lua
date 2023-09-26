@@ -20,10 +20,6 @@ return {
   'L3MON4D3/LuaSnip',
   'rafamadriz/friendly-snippets',
   'saadparwaiz1/cmp_luasnip',
-  { 'tzachar/cmp-tabnine',
-    build = './install.sh',
-    dependencies = { 'hrsh7th/nvim-cmp' }
-  },
   'nvimdev/lspsaga.nvim',
   -- language specifi,
   'neovimhaskell/haskell-vim',
