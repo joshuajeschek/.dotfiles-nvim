@@ -8,8 +8,7 @@ require'mini.indentscope'.setup()
 local starter = require('mini.starter')
 local home = os.getenv('HOME')
 local user_host = os.getenv('USER')
-  .. '@' .. io.popen('/bin/hostname'):read('*a'):gsub('\n', '')
-         .. io.popen('cat /etc/hostname'):read('*a'):gsub('\n', '')
+  .. '@' .. io.popen('cat /etc/hostname'):read('*a'):gsub('\n', '')
 
 local starter_items = {
   {
