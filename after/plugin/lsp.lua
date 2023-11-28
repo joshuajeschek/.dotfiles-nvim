@@ -14,7 +14,10 @@ lspsaga.setup({
     colors = {normal_bg = '#000000'}
   },
   lightbulb = {enable_in_insert = false},
-  symbol_in_winbar = {separator = '  '}
+  symbol_in_winbar = {
+    enable = false,
+    separator = '  '
+  }
 })
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
