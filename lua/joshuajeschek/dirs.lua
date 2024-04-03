@@ -23,7 +23,7 @@ local function setup()
     group = group_id,
     nested = true,
     callback = function()
-      require('nvim-rooter').rooter_default()
+      require('nvim-rooter').rooter()
       local cwd = vim.fn.getcwd()
       if cwd ~= dirs[1] and cwd ~= home then
         local indices = {}
