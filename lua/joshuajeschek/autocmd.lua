@@ -7,3 +7,9 @@ au('BufEnter', {
   group = group,
   command = 'setlocal wrap linebreak'
 })
+
+au('BufEnter', {
+  pattern = {'*.tex'},
+  group = group,
+  command = 'setlocal tw=100'
+})
