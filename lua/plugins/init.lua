@@ -1,7 +1,8 @@
 return {
   'wakatime/vim-wakatime',
   'jiangmiao/auto-pairs',
-  'notjedi/nvim-rooter.lua',
+  -- 'notjedi/nvim-rooter.lua',
+  'ahmedkhalf/project.nvim',
   'echasnovski/mini.nvim',
   'gpanders/editorconfig.nvim',
 
