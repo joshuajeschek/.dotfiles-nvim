@@ -56,9 +56,7 @@ return {
   'lukas-reineke/virt-column.nvim',
   'vim-airline/vim-airline',
   'rcarriga/nvim-notify',
-  -- 'fgheng/winbar.nvim',
   -- 'SmiteshP/nvim-gps',
-  -- 'glepnir/dashboard-nvim',
 
   'kenn7/vim-arsync',
 }
