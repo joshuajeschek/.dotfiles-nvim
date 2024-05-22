@@ -58,5 +58,5 @@ return {
   'rcarriga/nvim-notify',
   -- 'SmiteshP/nvim-gps',
 
-  'kenn7/vim-arsync',
+  -- 'kenn7/vim-arsync',
 }
