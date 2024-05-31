@@ -37,3 +37,20 @@ inoremap('<C-l>', 'λ')
 inoremap('<C-Enter>', 'copilot#Accept("<CR>")', { silent = true, expr = true, replace_keycodes = false})
 inoremap('<C-n>', 'copilot#Next()', { silent = true, expr = true })
 inoremap('<C-S-n>', 'copilot#Previous()', { silent = true, expr = true })
+
+-- soft wrapping navigation
+nnoremap('j', function()
+  if vim.v.count > 0 then
+    return 'j'
+  else
+    return 'gj'
+  end
+end,{expr=true})
+
+nnoremap('k', function()
+  if vim.v.count > 0 then
+    return 'k'
+  else
+    return 'gk'
+  end
+end,{expr=true})

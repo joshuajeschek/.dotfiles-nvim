@@ -57,6 +57,13 @@ return {
   'lukas-reineke/virt-column.nvim',
   'vim-airline/vim-airline',
   'rcarriga/nvim-notify',
+  { 'andrewferrier/wrapping.nvim',
+    config = function()
+      require('wrapping').setup({
+        softener = { tex = true }
+      })
+    end
+  },
   -- 'SmiteshP/nvim-gps',
 
   -- 'kenn7/vim-arsync',
