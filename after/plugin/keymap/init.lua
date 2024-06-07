@@ -3,7 +3,7 @@ local Utils = require('joshuajeschek.utils')
 
 local nnoremap = Remap.nnoremap
 local inoremap = Remap.inoremap
--- local vnoremap = Remap.vnoremap
+local vnoremap = Remap.vnoremap
 
 -- lsp keybinds -> lsp.lua
 -- cmp keybinds -> cmp.lua
@@ -39,18 +39,16 @@ inoremap('<C-n>', 'copilot#Next()', { silent = true, expr = true })
 inoremap('<C-S-n>', 'copilot#Previous()', { silent = true, expr = true })
 
 -- soft wrapping navigation
-nnoremap('j', function()
-  if vim.v.count > 0 then
-    return 'j'
-  else
-    return 'gj'
+local function softwrapnav(key)
+  return function()
+    if vim.v.count > 0 then
+      return key
+    else
+      return 'g' .. key
+    end
   end
-end,{expr=true})
-
-nnoremap('k', function()
-  if vim.v.count > 0 then
-    return 'k'
-  else
-    return 'gk'
-  end
-end,{expr=true})
+end
+nnoremap('j', softwrapnav('j'), {expr=true})
+nnoremap('k', softwrapnav('k'), {expr=true})
+vnoremap('j', softwrapnav('j'), {expr=true})
+vnoremap('k', softwrapnav('k'), {expr=true})
