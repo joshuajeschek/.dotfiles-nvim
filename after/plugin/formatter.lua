@@ -13,7 +13,7 @@ require('formatter').setup {
   logging = true,
   log_level = vim.log.levels.INFO,
   filetype = {
-    python = {require('formatter.filetypes.python').autopep8},
+    python = {require('formatter.filetypes.python').ruff},
     haskell = {require('formatter.filetypes.haskell').stylish_haskell},
     c = {require('formatter.filetypes.c').clangformat},
     -- cs = {require('formatter.filetypes.cs').dotnetformat},
