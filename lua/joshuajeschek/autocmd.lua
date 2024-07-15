@@ -1,7 +1,13 @@
--- local au = vim.api.nvim_create_autocmd
---
--- local group = vim.api.nvim_create_augroup('joshuajeschek', { clear = true })
---
+local au = vim.api.nvim_create_autocmd
+
+local group = vim.api.nvim_create_augroup('joshuajeschek', { clear = true })
+
+au('BufEnter', {
+  pattern = {'*.tex'},
+  group = group,
+  command = 'set filetype=tex'
+})
+
 -- au('BufEnter', {
 --   pattern = {'*.md', '*.tex'},
 --   group = group,

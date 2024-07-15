@@ -29,6 +29,7 @@ return {
   'aklt/plantuml-syntax',
   'elkowar/yuck.vim',
   'prisma/vim-prisma',
+  'imsnif/kdl.vim',
 
   -- treesitter
   'nvim-treesitter/nvim-treesitter',
@@ -60,7 +61,8 @@ return {
   { 'andrewferrier/wrapping.nvim',
     config = function()
       require('wrapping').setup({
-        softener = { tex = true }
+        notify_on_switch = false,
+        softener = { tex = true, markdown = true }
       })
     end
   },
