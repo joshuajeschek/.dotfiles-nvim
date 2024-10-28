@@ -30,6 +30,10 @@ return {
   'elkowar/yuck.vim',
   'prisma/vim-prisma',
   'imsnif/kdl.vim',
+  { 'kaarmu/typst.vim',
+    ft = 'typst',
+    lazy=false
+  },
 
   -- treesitter
   'nvim-treesitter/nvim-treesitter',
@@ -62,7 +66,7 @@ return {
     config = function()
       require('wrapping').setup({
         notify_on_switch = false,
-        softener = { tex = true, markdown = true }
+        softener = { tex = true, markdown = true, typst = true }
       })
     end
   },
