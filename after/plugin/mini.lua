@@ -47,7 +47,7 @@ table.insert(starter_items, {
 })
 table.insert(starter_items, {
   name = 'Configure Nvim',
-  action = 'Telescope find_files hidden=true cwd=' .. home .. '/.config/nvim',
+  action = 'Telescope find_files hidden=true cwd=' .. home .. '/.config/home-manager/nvim',
   section = '---'
 })
 table.insert(starter_items, {

@@ -29,9 +29,11 @@ lspconfig.prismals.setup {capabilities = capabilities}
 lspconfig.jsonls.setup {capabilities = capabilities}
 lspconfig.csharp_ls.setup {capabilities = capabilities}
 lspconfig.ts_ls.setup {capabilities = capabilities}
+-- lspconfig.svelte.setup {capabilities = capabilities}
+lspconfig.biome.setup {capabilities = capabilities}
 lspconfig.ruff_lsp.setup {capabilities = capabilities}
 -- lspconfig.pyright.setup {capabilities = capabilities}
--- lspconfig.jedi_language_server.setup {capabilities = capabilities}
+lspconfig.jedi_language_server.setup {capabilities = capabilities}
 
 lspconfig.lua_ls.setup {
   capabilities = capabilities,

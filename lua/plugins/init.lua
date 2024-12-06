@@ -34,6 +34,7 @@ return {
     ft = 'typst',
     lazy=false
   },
+  'burner/vim-svelte',
 
   -- treesitter
   'nvim-treesitter/nvim-treesitter',
